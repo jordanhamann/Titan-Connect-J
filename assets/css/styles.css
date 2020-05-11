@@ -1,0 +1,18 @@
+.container.main {
+    margin-top: 5em;
+}
+
+ .card img {
+    padding: 30px;
+}
+
+/* Make the spacing between the line next to register and register look better */
+.ui.menu .right.item::before {
+    left: auto;
+}
+
+.ui.form {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}

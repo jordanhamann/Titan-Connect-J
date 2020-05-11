@@ -1,0 +1,27 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "description": "Jordan's first go at creating a Titan Connect App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "luxon": "^1.22.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.8.7",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "request": "^2.88.0",
+    "semantic-ui-calendar": "0.0.8",
+    "socket.io": "^2.3.0",
+    "underscore": "^1.9.2"
+  }
+}

@@ -1,0 +1,55 @@
+<%- include("../partials/header") %>
+
+<div class="ui huge header">Current Parameters</div>
+
+<% categories.forEach((cat) => { %>
+  <h3> <%= cat %> </h3>
+  <table class="ui unstackable selectable structured table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th colspan="2" class="center aligned">Current Value</th>
+          <th class="center aligned six wide">Last Changed</th>
+          <th colspan="2" class="center aligned">Previous Value</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% currentParams.forEach((param) => { %>
+          <% if(param.category == cat) { %>
+            <tr>
+                <td> <a href="/parameters/<%=param.name%>"> <%= param.name %> </a></td>
+                <td class="right aligned" > <%= param.value %> </td>
+                <td> <%= param.units %> </td>
+                <td class="center aligned"> <%= moment(param.dateCreated).format("h:mm a,  MMMM Do YYYY") %> </td>
+                <td class="right aligned"> 
+                  <!-- find the past parameter that has the same name as the current parameter and print it's value -->
+                  <% pastParams.forEach((pastParam) => { %>
+                    <% if(pastParam && pastParam.name == param.name) { %>
+                      <%= pastParam.value %>
+                    <% } %>
+                  <% }) %> 
+                  <!--  -->
+                </td>
+                <td> <%= param.units %> </td>
+            </tr>
+          <% } %>
+        <% }) %>
+
+      </tbody>
+  </table>
+<% }) %>
+
+<script>
+  $( document ).ready(function() {
+    var name;
+    var tableRows = $("tbody tr");
+    
+    tableRows.each(function(i){
+      name = $(this).children().first().text();
+      $(this).click()
+    });
+  })
+</script>
+
+<%- include("../partials/footer") %>

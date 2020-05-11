@@ -1,0 +1,189 @@
+<%- include("../partials/header") %>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<div class="ui top attached tabular menu">
+    <a id="avgCycleTime" class="item active" data-chart-type="cycletime">
+      Average Cycle Time
+    </a>
+    <a id="numberOfStraps" class="item" data-chart-type="numberofcycles">
+      Number Of Straps
+    </a>
+  </div>
+  <div class="ui bottom attached segment">
+
+    <p></p>
+    <div id="chartTitle" class="ui huge header">Average Cycle Time</div>
+
+    <div id="chartCanvasDiv">
+        <canvas id="cycleTimeChart"></canvas>
+    </div>
+
+    <!-- chart Controls -->
+    <div class="ui form">
+        <div class="inline fields">
+            <label>Display data from the last </label>
+            <div class="field">
+                <div class="ui">
+                    <input id="numberOfBars" type="number" min="1" step="1" name="numberOfBars" placeholder="7">
+                </div>
+            </div>
+            <div class="field">
+                <div class="ui selection dropdown">
+                    <input id="timePeriod" type="hidden" name="timePeriod" placeholder="Time Period">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Days</div>
+                    <div class="menu">
+                        <div class="item" data-value="hours">Hours</div>
+                        <div class="item" data-value="days">Days</div>
+                        <div class="item" data-value="weeks">Weeks</div>
+                        <div class="item" data-value="months">Months</div>
+                    </div>
+                </div>
+            </div>
+            <div id="showButton" class="ui blue submit button">Show</div>
+        </div>
+    </div>
+  </div>
+  
+
+<!-- Script for producing the cycle time chart via chart.js -->
+<script>
+    $( document ).ready(function() {
+        var cycleTimeDiv = $("#chartCanvasDiv"); //Select Div containing canvas
+        var cycleTimeCanvas = $("#cycleTimeChart"); //Select canvas
+        var avgCycleTimeChartInfo = {
+            data: {},
+            type: "avgCycleTime",
+            title: "Average Cycle Time",
+            yAxisLabel: "Average Cycle Time (sec)",
+            xAxisLabel: "Time Period"
+        };
+        var numOfStrapsChartInfo = {
+            data: {},
+            type: "numOfStraps",
+            title: "Number OF Straps",
+            yAxisLabel: "Number Of Straps Fired",
+            xAxisLabel: "Time Period"
+        };
+        var newCanvas;
+        var xhttp = new XMLHttpRequest();
+        newCanvas = replaceChartCanvas(cycleTimeCanvas, cycleTimeDiv);
+        var chartData = [];
+        var url = "/barGraphData" + "?timeInc=" + "days" + "&numberOfBars=" + "7";
+
+        var chartInfo = avgCycleTimeChartInfo;
+
+        loadChartData(xhttp, url);
+
+        xhttp.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200) {
+                chartInfo.data = JSON.parse(this.responseText);
+                if(chartInfo.type == "numOfStraps"){
+                    createCycleTimeChart(newCanvas, chartInfo.data.counts);
+                } else {
+                    createCycleTimeChart(newCanvas, chartInfo.data.averages);
+                }
+            };
+        }
+
+        $('.ui.dropdown').dropdown(); //Code to make the dropdown box work
+        // $('.visible.example .ui.sidebar').sidebar({context: '.visible.example .bottom.segment'}).sidebar('hide'); // Code to make sidebar work
+        
+        //When the Show button is clicked, submit the AJAX call to retrieve data from the server
+        $("#showButton").click(function(){
+            var cycleTimeDiv = $("#chartCanvasDiv"); //Select Div containing canvas
+            var cycleTimeCanvas = $("#cycleTimeChart"); //Select canvas
+            newCanvas = replaceChartCanvas(cycleTimeCanvas, cycleTimeDiv);
+            var timeInc = $("#timePeriod").val();
+            var numberOfBars = $("#numberOfBars").val();
+            var url = "/barGraphData" + "?timeInc=" + timeInc + "&numberOfBars=" + numberOfBars;
+            console.log(url);
+            loadChartData(xhttp, url);
+        });
+
+        //When the menu item "NumberOfStraps is clicked"
+        $("#numberOfStraps").click(function(){
+            console.log("clicked");
+            $("#chartTitle").text("Number Of Straps");
+            chartInfo = numOfStrapsChartInfo;
+            $(".menu a").removeClass("active");
+            $(this).addClass("active");
+            var cycleTimeDiv = $("#chartCanvasDiv"); //Select Div containing canvas
+            var cycleTimeCanvas = $("#cycleTimeChart"); //Select canvas
+            newCanvas = replaceChartCanvas(cycleTimeCanvas, cycleTimeDiv);
+            var timeInc = $("#timePeriod").val();
+            var numberOfBars = $("#numberOfBars").val();
+            chartType = "numOfStraps";
+            var url = "/barGraphData" + "?timeInc=" + timeInc + "&numberOfBars=" + numberOfBars;
+            console.log(url);
+            loadChartData(xhttp, url);
+        });
+
+        $("#avgCycleTime").click(function(){
+            console.log("clicked");
+            $("#chartTitle").text("Average Cycle Time");
+            chartInfo = avgCycleTimeChartInfo;
+            $(".menu a").removeClass("active");
+            $(this).addClass("active");
+            var cycleTimeDiv = $("#chartCanvasDiv"); //Select Div containing canvas
+            var cycleTimeCanvas = $("#cycleTimeChart"); //Select canvas
+            newCanvas = replaceChartCanvas(cycleTimeCanvas, cycleTimeDiv);
+            var timeInc = $("#timePeriod").val();
+            var numberOfBars = $("#numberOfBars").val();
+            chartType = "avgCycleTime";
+            var url = "/barGraphData" + "?timeInc=" + timeInc + "&numberOfBars=" + numberOfBars;
+            console.log(url);
+            loadChartData(xhttp, url);
+        });
+
+        //Used functions
+        function replaceChartCanvas(canvas, newCanvasDiv){
+            canvas.remove();
+            newCanvasDiv.append("<canvas></canvas>");
+            newCanvasDiv.find("canvas").attr("id", canvas.attr("id"));
+            return newCanvasDiv.find("canvas");
+        }
+
+        function loadChartData(xhttp, url){
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        function createCycleTimeChart(canvas, data){
+
+            var cycleTimeChart = new Chart(canvas, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: chartInfo.data.labels,
+                    datasets: [{
+                        label: "Strapper Position 1",
+                        backgroundColor: 'rgb(60, 138, 201)',
+                        borderColor: 'rgb(60, 138, 201)',
+                        data: data[0]
+                    },
+                    {
+                        label: "Strapper Position 2",
+                        backgroundColor: 'rgb(49, 130, 71)',
+                        borderColor: 'rgb(49, 130, 71)',
+                        data: data[1]
+                    }
+
+                ]
+                },
+                // Configuration options go here
+                options: {scales: {yAxes: [{ticks: { beginAtZero: true}, scaleLabel: {display: true, labelString: chartInfo.yAxisLabel, fontSize: 16}}]}}
+            });      
+        }
+    });  
+</script>
+
+
+
+<%- include("../partials/footer") %>

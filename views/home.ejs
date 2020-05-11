@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<div class="ui huge header">Dashboard</div>
+
+<div class="ui link cards">
+    <a class="ui card" href="/faults">
+      <div class="image">
+        <img src="/assets/img/warningIcon.svg" alt="">
+      </div>
+      <div class="content">
+        <div class="header">Faults</div>
+        <div class="description">
+          View fault logs and fault occurrance over time
+        </div>
+      </div>
+    </a>
+    <a class="ui card" href="/cycletimes">
+        <div class="image">
+            <img src="/assets/img/CycleTimeIcon.svg" alt="">
+        </div>
+        <div class="content">
+          <div class="header">Cycles</div>
+          <div class="description">
+            View the number of cycles and the average cycle times for your Titan strapping heads
+          </div>
+        </div>
+      </a>
+      <a class="ui card" href="/parameters">
+        <div class="image">
+            <img src="/assets/img/Settings Icon.svg" alt="">
+        </div>
+        <div class="content">
+          <div class="header">Parameters</div>
+          <div class="description">
+            View the current parameter set and a log of changes that have occurred
+          </div>
+        </div>
+      </a>
+  </div>
+
+
+<%- include("partials/footer") %>

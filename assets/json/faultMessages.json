@@ -1,0 +1,98 @@
+{ 
+    "faults": [
+        {
+            "title": "Cam Motor Overload",
+            "message": "The Cam Motor breaker has tripped due to an overload. Check that the cam mechanism is not blocked and can turn freely. This fault may indicate that an internal component is worn out. Check the bridge lever and centre die pin.",
+            "type": "Overload"
+        },
+        {
+            "title": "Tension Motor Overload",
+            "message": "The Tension Motor breaker has tripped due to an overload. Check that the tension motor and mechanism is not blocked and free from debris. This fault may indicate that an internal component is worn out.",
+            "type": "Overload"
+        },
+        {
+            "title": "Transport Motor Overload",
+            "message": "The Transport Motor breaker has tripped due to an overload. Check that the transport motor and mechanism is not blocked and free from debris. This fault may indicate that an internal component is worn out.",
+            "type": "Overload"
+        },
+        {
+            "title": "Motor Supply Overload",
+            "message": "The breaker protecting all motors has tripped. Check the power supply and wiring",
+            "type": "Overload"
+        },
+        {
+            "title": "Inverter Overload",
+            "message": "The breaker feeding the inverter has overloaded. Check transport motor",
+            "type": "Overload"
+        },
+        {
+            "title": "Heater Circuit Overload",
+            "message": "The breaker on the heater circuit has tripped. Check the heater blade is functioning correctly",
+            "type": "Overload"
+        },
+        {
+            "title": "Refeed Fault",
+            "message": "The strap was not able to be fed around the arch successfully. Ensure there are no blockages in the arch. Check that the strapping head and arch are aligned properly. Check that the B1 switch is operating correctly",
+            "type": "Refeed"
+        },
+        {
+            "title": "E-Stop Activated",
+            "message": "The E-Stop has been activated",
+            "type": "Safety - E-Stop"
+        },
+        {
+            "title": "Safety Circuit Triggered",
+            "message": "The safety circuit has been triggered. Check safety fences and enclosures. Check safety circuit wiring",
+            "type": "Safety - E-Stop"
+        },
+        {
+            "title": "Heater not at Temperature",
+            "message": "The safety circuit has been triggered. Check safety fences and enclosures. Check safety circuit wiring",
+            "type": "Heater Temperature"
+        },
+        {
+            "title": "Cam Runtime",
+            "message": "The cam was unable to rotate to the next position before timing out. Check that the cam motor is connected correctly. Check that the cam motor brake is operating correctly. Check that the cam position proximity sensors are operating correctly",
+            "type": "Runtime Monitoring"
+        },
+        {
+            "title": "Strap Retraction Timeout",
+            "message": "The strap was unable to be fully retracted before timing out. Check that the tension rocker sensor (B2) is operating correctly and has not come loose.",
+            "type": "Runtime Monitoring"
+        },
+        {
+            "title": "Tensioning Timeout",
+            "message": "The strap was unable to be fully tensioned before timing out. Check that the tension rocker sensor (B2) is operating correctly and has not come loose. Check the tensioning time parameter is not too high",
+            "type": "Runtime Monitoring"
+        },
+        {
+            "title": "Tension Relief Timeout",
+            "message": "The tension relief step has timed out. Check the connection to the tension motor contactors. Check that the tension relief time is not too high. Check the tension relief runtime parameter is not too short.",
+            "type": "Runtime Monitoring"
+        }
+    ],
+    "types": [
+        "Overload",
+        "Refeed",
+        "Heater Temperature",
+        "Safety - E-Stop",
+        "Stop Command",
+        "Runtime Monitoring"
+    ],
+    "titles": [
+        "Cam Motor Overload",
+        "Tension Motor Overload",
+        "Transport Motor Overload",
+        "Motor Supply Overload",
+        "Inverter Overload",
+        "Heater Circuit Overload",
+        "Refeed Fault",
+        "E-Stop Activated",
+        "Safety Circuit Triggered",
+        "Heater not at Temperature",
+        "Cam Runtime",
+        "Strap Retraction Timeout",
+        "Tensioning Timeout",
+        "Tension Relief Timeout"
+    ]
+}

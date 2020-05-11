@@ -1,0 +1,338 @@
+{ 
+    "parameterDefaults": [
+        {  
+            "name": "Strap Feed Speed Fast",
+            "dataType": "Real",
+            "value": "1700.1",
+            "units": "rpm",
+            "defaultValue": "1700.1",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        } ,
+        {  
+            "name": "Strap Feed Speed Slow",
+            "dataType": "Real",
+            "value": "5000.1",
+            "units": "rpm",
+            "defaultValue": "500.1",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        } ,
+        {  
+            "name": "Strap Reverse Speed Fast",
+            "dataType": "Real",
+            "value": "1700.1",
+            "units": "rpm",
+            "defaultValue": "1700.1",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Strap Reverse Speed Slow",
+            "dataType": "Real",
+            "value": "500.1",
+            "units": "rpm",
+            "defaultValue": "500.1",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Strap Feed Speed Fast",
+            "dataType": "Real",
+            "value": "1700.1",
+            "units": "rpm",
+            "defaultValue": "1700.1",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Distance to Slow Feed",
+            "dataType": "Real",
+            "value": "2000.1",
+            "units": "mm",
+            "defaultValue": "2000.1",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Distance To Slow Retract",
+            "dataType": "Real",
+            "value": "2250.1",
+            "units": "mm",
+            "defaultValue": "2250.1",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Time to Slow Retract",
+            "dataType": "Time",
+            "value": "T#2s",
+            "units": "sec",
+            "defaultValue": "T#2s",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Time to Slow Feed",
+            "dataType": "Time",
+            "value": "T#2s",
+            "units": "sec",
+            "defaultValue": "T#2s",
+            "category": "Strap Feed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Minimum Strap Length",
+            "dataType": "Real",
+            "value": "60.1",
+            "units": "mm",
+            "defaultValue": "60.1",
+            "category": "Refeed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Time Refeed Backwards",
+            "dataType": "Time",
+            "value": "T#4s",
+            "units": "sec",
+            "defaultValue": "T#4s",
+            "category": "Refeed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Max Strap Length",
+            "dataType": "Real",
+            "value": "3000.1",
+            "units": "mm",
+            "defaultValue": "3000.1",
+            "category": "Refeed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Time Refeed Forwards",
+            "dataType": "Time",
+            "value": "T#4s",
+            "units": "sec",
+            "defaultValue": "T#4s",
+            "category": "Refeed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Number Of Refeeds",
+            "dataType": "Integer",
+            "value": "4",
+            "units": "refeeds",
+            "defaultValue": "4",
+            "category": "Refeed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Refeed Mode",
+            "dataType": "Boolean",
+            "value": "false",
+            "units": " - ",
+            "defaultValue": "false",
+            "category": "Refeed Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Tension Time",
+            "dataType": "Time",
+            "value": "T#60ms",
+            "units": "msec",
+            "defaultValue": "T#60ms",
+            "category": "Tension and Sealing Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Tension Rocker Delay",
+            "dataType": "Time",
+            "value": "T#60ms",
+            "units": "msec",
+            "defaultValue": "T#60ms",
+            "category": "Tension and Sealing Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Tension Break Time",
+            "dataType": "Time",
+            "value": "T#60ms",
+            "units": "msec",
+            "defaultValue": "T#60ms",
+            "category": "Tension and Sealing Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Number Of Tension Cycles",
+            "dataType": "Integer",
+            "value": "3",
+            "units": "cycles",
+            "defaultValue": "3",
+            "category": "Tension and Sealing Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Tension Relief Time",
+            "dataType": "Time",
+            "value": "T#60ms",
+            "units": "msec",
+            "defaultValue": "T#60ms",
+            "category": "Tension and Sealing Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Cooling Time",
+            "dataType": "Time",
+            "value": "T#60ms",
+            "units": "msec",
+            "defaultValue": "T#60ms",
+            "category": "Tension and Sealing Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Close Head Delay",
+            "dataType": "Time",
+            "value": "T#160ms",
+            "units": "msec",
+            "defaultValue": "T#50ms",
+            "category": "Tension and Sealing Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Cyclic Tensioning Mode",
+            "dataType": "Boolean",
+            "value": "true",
+            "units": " - ",
+            "defaultValue": "true",
+            "category": "Tension and Sealing Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Total Cycle Runtime",
+            "dataType": "Time",
+            "value": "T#32s",
+            "units": "sec",
+            "defaultValue": "T#32s",
+            "category": "Runtime Monitoring",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Strap Feed Runtime",
+            "dataType": "Time",
+            "value": "T#8s",
+            "units": "sec",
+            "defaultValue": "T#8s",
+            "category": "Runtime Monitoring",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Strap Retract Runtime",
+            "dataType": "Time",
+            "value": "T#8s",
+            "units": "sec",
+            "defaultValue": "T#6s",
+            "category": "Runtime Monitoring",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Tensioning Runtime",
+            "dataType": "Time",
+            "value": "T#6s",
+            "units": "sec",
+            "defaultValue": "T#5s",
+            "category": "Runtime Monitoring",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Cam Runtime",
+            "dataType": "Time",
+            "value": "T#6s",
+            "units": "sec",
+            "defaultValue": "T#6s",
+            "category": "Runtime Monitoring",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Heater Runtime",
+            "dataType": "Time",
+            "value": "T#183s",
+            "units": "sec",
+            "defaultValue": "T#18s",
+            "category": "Runtime Monitoring",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Basic Temperature",
+            "dataType": "Integer",
+            "value": "485",
+            "units": "deg C",
+            "defaultValue": "480",
+            "category": "Heater Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Cleaning Temperature",
+            "dataType": "Integer",
+            "value": "655",
+            "units": "deg C",
+            "defaultValue": "650",
+            "category": "Heater Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Straps Until Cleaning",
+            "dataType": "Integer",
+            "value": "50",
+            "units": "straps",
+            "defaultValue": "100",
+            "category": "Heater Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Auto Clean Mode",
+            "dataType": "Boolean",
+            "value": "true",
+            "units": " - ",
+            "defaultValue": "true",
+            "category": "Heater Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Back With Tension Motor Mode",
+            "dataType": "Boolean",
+            "value": "true",
+            "units": " - ",
+            "defaultValue": "false",
+            "category": "Mode Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Cycle Prepare Mode",
+            "dataType": "Boolean",
+            "value": "false",
+            "units": " - ",
+            "defaultValue": "true",
+            "category": "Mode Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Head Remain Open Mode",
+            "dataType": "Boolean",
+            "value": "true",
+            "units": " - ",
+            "defaultValue": "false",
+            "category": "Mode Parameter",
+            "dateCreated": "1583201831287"
+        },
+        {  
+            "name": "Reverse Stop Mode",
+            "dataType": "Boolean",
+            "value": "true",
+            "units": " - ",
+            "defaultValue": "false",
+            "category": "Mode Parameter",
+            "dateCreated": "1583201831287"
+        }
+    ]
+}
+

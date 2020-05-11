@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+   <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <title>Titan Connect - V1</title>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <div class="ui fixed inverted menu">
+        <div class="ui container">
+            <div class="header item"> <i class="code icon"></i> Titan Connect</div>
+            <a href="/" class="item"> </i> Home</a>
+            <a href="/datasets/new" class="item">Add Data</a>
+            <div class="right item">
+              <div class="ui action input">
+                <% if(!currentUser){ %>
+                <a href="/register" class="item">Register</a>
+                <a href="/login" class="item"><i class="user icon"></i>Login</a>
+                <% } else { %>
+                <a href="/logout" class="item">Logout</a>
+                <li href="" class="item"> Signed in as: <strong><%= currentUser.username %></strong></li>
+                <% } %>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui container main">

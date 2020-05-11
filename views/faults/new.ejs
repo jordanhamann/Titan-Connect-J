@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+
+<div class="ui huge header">Add Data</div>
+
+<form class="ui form" action="/datasets" method="POST">
+        <div class="field">
+          <label>Number of Straps</label>
+          <input type="text" name="strapsPerDay" placeholder="Number of straps">
+        </div>
+        <div class="field">
+          <label>Date</label>
+          <input type="date" name="date" placeholder="Date">
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+      </form>
+
+<script type="text/javascript" src="/assets/js/new.js"></script>
+
+<%- include("partials/footer") %>
